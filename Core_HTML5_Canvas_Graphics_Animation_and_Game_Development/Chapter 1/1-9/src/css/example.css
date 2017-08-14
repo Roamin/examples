@@ -1,1 +1,26 @@
-body{margin:0;background-color:#eee}#canvas{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);border:1px solid #ddd;background-color:#fff}
+body {
+  margin: 0;
+  background-color: #eee;
+}
+
+#canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+#controls {
+  margin: 20px 0px 20px 20px;
+}
+
+#rubberBandDiv {
+  z-index: 1;
+  position: absolute;
+  border: 3px solid blue;
+  cursor: crosshair;
+}
+
+/*# sourceMappingURL=example.css.map */

@@ -17,8 +17,9 @@ body {
 }
 
 #rubberBandDiv {
+	z-index: 1;
+	display: none;
 	position: absolute;
 	border: 3px solid blue;
 	cursor: crosshair;
-	display: none;
 }
