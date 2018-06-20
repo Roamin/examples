@@ -18,13 +18,11 @@ function initThree() {
 let camera
 function initCamera() {
     camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000)
-    camera.position.x = 0
-    camera.position.y = 1600
-    camera.position.z = 0
+    camera.position.x = 1200
+    camera.position.y = 1200
+    camera.position.z = 1200
 
-    camera.up.x = 0
-    camera.up.y = 0
-    camera.up.z = 1
+    camera.up = new THREE.Vector3(0, 1, 0)
 
     camera.lookAt({
         x: 0,
@@ -60,6 +58,7 @@ function initObject() {
         line.position.x = (i * 10) - 600
         line.rotation.y = 90 * Math.PI / 180
         scene.add(line)
+        scene.add(new THREE.AxisHelper(500))
     }
 }
 
