@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+}
+
+#control-bar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+div#canvas-frame {
+    height: 600px;
+    background-color: #eee;
+    cursor: pointer;
+}
