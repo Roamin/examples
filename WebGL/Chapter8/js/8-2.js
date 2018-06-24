@@ -57,7 +57,7 @@ function initObject() {
     const material = new THREE.MeshBasicMaterial({ 
         vertexColors: THREE.FaceColors,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.9
     })
     cube = new THREE.Mesh(geometry, material)
 
@@ -102,6 +102,8 @@ function mousewheelHandle(e) {
 function animation() {
     // cube.rotation.y += 0.01
     // cube.rotate(1, 1, 1)
+    cube.rotation.x = Math.PI / 5
+    cube.rotation.y = Math.PI / 5
     renderer.render(scene, camera)
     requestAnimationFrame(animation)
 }
