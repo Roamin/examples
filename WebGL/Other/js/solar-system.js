@@ -39,7 +39,7 @@ function initScene () {
 
 function initCamera () {
     camera = new THREE.PerspectiveCamera(45, width / height, 1, 3000)
-    camera.position.set(0, 50, 0)
+    camera.position.set(200, 50, 0)
     camera.lookAt(0, 0, 0)
 
     scene.add(camera)
