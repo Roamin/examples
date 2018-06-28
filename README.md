@@ -5,3 +5,4 @@
 ## Chestnut
 
 - [Solar System](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/ThreeJS/Other/solar-system.html)
+- [Particles Sprites](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/ThreeJS/Other/particles-sprites.html)
