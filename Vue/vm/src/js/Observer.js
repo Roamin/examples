@@ -9,19 +9,19 @@ class Observer {
         })
     }
 
-    _bind (data, key, value) {
+    _bind (data, key, value) { 
         const dep = new Dep()
 
         Object.defineProperty(data, key, {
             get () {
                 if (Dep.target) {
                     dep.listen(Dep.target)
-                    
-                    return value
                 }
+
+                return value
             },
             set (newValue) {
-                if (newValue === null) {
+                if (newValue === value) {
                     return
                 }
 

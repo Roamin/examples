@@ -38,7 +38,12 @@ class Compiler {
             }
         }
 
+        console.log(node)
+
         if (node.nodeType === 3) {
+            // console.log(node)
+            // console.log(REG.test(node.nodeValue))
+
             if (REG.test(node.nodeValue)) {
                 let name = RegExp.$1
 
