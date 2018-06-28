@@ -4,4 +4,4 @@
 
 ## Chestnut
 
-- [Solar System](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/WebGL/Other/solar-system.html)
+- [Solar System](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/ThreeJS/Other/solar-system.html)

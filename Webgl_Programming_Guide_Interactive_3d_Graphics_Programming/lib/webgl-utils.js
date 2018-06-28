@@ -40,7 +40,7 @@
  *
  *       gl = WebGLUtils.setupWebGL(canvas);
  *
- * For animated WebGL apps use of setTimeout or setInterval are
+ * For animated ThreeJS apps use of setTimeout or setInterval are
  * discouraged. It is recommended you structure your rendering
  * loop like this.
  *
@@ -82,7 +82,7 @@ var makeFailHTML = function(msg) {
  * @type {string}
  */
 var GET_A_WEBGL_BROWSER = '' +
-  'This page requires a browser that supports WebGL.<br/>' +
+  'This page requires a browser that supports ThreeJS.<br/>' +
   '<a href="http://get.webgl.org">Click here to upgrade your browser.</a>';
 
 /**
@@ -90,13 +90,13 @@ var GET_A_WEBGL_BROWSER = '' +
  * @type {string}
  */
 var OTHER_PROBLEM = '' +
-  "It doesn't appear your computer can support WebGL.<br/>" +
+  "It doesn't appear your computer can support ThreeJS.<br/>" +
   '<a href="http://get.webgl.org">Click here for more information.</a>';
 
 /**
  * Creates a webgl context. If creation fails it will
  * change the contents of the container of the <canvas>
- * tag to an error message with the correct links for WebGL.
+ * tag to an error message with the correct links for ThreeJS.
  * @param {Element} canvas. The canvas element to create a
  *     context from.
  * @param {WebGLContextCreationAttirbutes} opt_attribs Any

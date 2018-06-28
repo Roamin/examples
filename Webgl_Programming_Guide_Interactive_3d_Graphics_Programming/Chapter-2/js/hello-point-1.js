@@ -22,7 +22,7 @@ function main () {
     const gl = getWebGLContext(canvas)
 
     if (!gl) {
-        console.log('Failed to get the rendering context for WebGL.')
+        console.log('Failed to get the rendering context for ThreeJS.')
         
         return
     }

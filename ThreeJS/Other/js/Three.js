@@ -12990,7 +12990,7 @@
 		};
 
 		// When rendered geometry doesn't include these attributes but the material does,
-		// use these default values in WebGL. This avoids errors when buffer data is missing.
+		// use these default values in ThreeJS. This avoids errors when buffer data is missing.
 		this.defaultAttributeValues = {
 			'color': [ 1, 1, 1 ],
 			'uv': [ 0, 0 ],
@@ -15926,7 +15926,7 @@
 	//  - followed by an optional left bracket or dot (type of subscript)
 	//
 	// Note: These portions can be read in a non-overlapping fashion and
-	// allow straightforward parsing of the hierarchy that WebGL encodes
+	// allow straightforward parsing of the hierarchy that ThreeJS encodes
 	// in the uniform names.
 
 	function addUniform( container, uniformObject ) {
@@ -17067,7 +17067,7 @@
 				programs[ i ] = programs[ programs.length - 1 ];
 				programs.pop();
 
-				// Free WebGL resources
+				// Free ThreeJS resources
 				program.destroy();
 
 			}
@@ -19027,7 +19027,7 @@
 		var version = 0;
 		var glVersion = gl.getParameter( gl.VERSION );
 
-		if ( glVersion.indexOf( 'WebGL' ) !== - 1 ) {
+		if ( glVersion.indexOf( 'ThreeJS' ) !== - 1 ) {
 
 			version = parseFloat( /^WebGL\ ([0-9])/.exec( glVersion )[ 1 ] );
 			lineWidthAvailable = ( version >= 1.0 );
@@ -20126,7 +20126,7 @@
 
 				} else if ( _isWebGL2 ) {
 
-					// WebGL 2.0 requires signed internalformat for glTexImage2D
+					// ThreeJS 2.0 requires signed internalformat for glTexImage2D
 					internalFormat = _gl.DEPTH_COMPONENT16;
 
 				}
@@ -21302,7 +21302,7 @@
 				powerPreference: _powerPreference
 			};
 
-			// event listeners must be registered before WebGL context is created, see #12753
+			// event listeners must be registered before ThreeJS context is created, see #12753
 
 			_canvas.addEventListener( 'webglcontextlost', onContextLost, false );
 			_canvas.addEventListener( 'webglcontextrestored', onContextRestore, false );
@@ -21313,11 +21313,11 @@
 
 				if ( _canvas.getContext( 'webgl' ) !== null ) {
 
-					throw new Error( 'Error creating WebGL context with your selected attributes.' );
+					throw new Error( 'Error creating ThreeJS context with your selected attributes.' );
 
 				} else {
 
-					throw new Error( 'Error creating WebGL context.' );
+					throw new Error( 'Error creating ThreeJS context.' );
 
 				}
 
