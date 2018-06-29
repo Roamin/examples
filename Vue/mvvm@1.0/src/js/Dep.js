@@ -1,5 +1,6 @@
 class Dep {
     constructor () {
+        console.log(this)
         this.list = []
     }
 

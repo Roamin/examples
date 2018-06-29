@@ -5,11 +5,11 @@ class Observer {
         this.data = data
 
         Object.keys(this.data).forEach(key => {
-            this._bind(data, key, data[key])
+            this.bind(data, key, data[key])
         })
     }
 
-    _bind (data, key, value) { 
+    bind (data, key, value) { 
         const dep = new Dep()
 
         Object.defineProperty(data, key, {

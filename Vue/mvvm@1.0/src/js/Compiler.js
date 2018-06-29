@@ -4,26 +4,26 @@ const REG = /\{\{(.*)\}\}/
 
 class Compiler {
     constructor (el, vm) {
-        this.el = document.querySelector(el)
         this.vm = vm
+        this.el = document.querySelector(el)
 
-        this.frag = this._createFragment()
+        this.frag = this.createFragment()
         this.el.appendChild(this.frag)
     }
 
-    _createFragment () {
+    createFragment () {
         const frag = document.createDocumentFragment()
-        let child = null
+        let child
 
         while (child = this.el.firstChild) {
-            this._compile(child)
+            this.compile(child)
             frag.appendChild(child)
         }
 
         return frag
     }
 
-    _compile (node) {
+    compile (node) {
         if (node.nodeType === 1) {
             const attr = node.attributes
 
@@ -38,8 +38,6 @@ class Compiler {
             }
         }
 
-        console.log(node)
-
         if (node.nodeType === 3) {
             // console.log(node)
             // console.log(REG.test(node.nodeValue))
@@ -51,6 +49,10 @@ class Compiler {
                 new Watcher(node, name, this.vm)
             }
         }
+
+        node.childNodes.forEach((subNode) => {
+            this.compile(subNode)
+        })
     }
 }
 
