@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    position: relative;
+    height: 100vh;
+    min-height: 400px;
+}
+
+#viewport {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    perspective: 400px;
+}
+
+#world {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -256px;
+    margin-left: -256px;
+    width: 512px;
+    height: 512px;
+}
+
+#world {
+    --translateZ: 0;
+    --rotateX: 65;
+    --rotateY: 0;
+
+    transform-style: preserve-3d;
+    transform:
+            translateZ(calc(var(--translateZ) * 1px))
+            rotateX(calc(var(--rotateX) * 1deg))
+            rotateY(calc(var(--rotateY) * 1deg));
+}
+
+.coords {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.coords > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: green;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.x-axis {
+    left: 200px;
+}
+
+.y-axis {
+    top: 200px;
+}
+
+.wall-yellow {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: yellow;
+    opacity: .5;
+}
+
+.wall-yellow:before{
+    content:'';
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+
+.wall1{
+    transform:translateZ(200px) rotateX(0deg) rotateY(0deg);
+}
+
+.wall2{
+    transform:translateZ(100px) translateY(100px) rotateX(90deg) rotateY(0deg);
+}
+
+.wall3{
+    transform:translateZ(100px) translateY(-100px) rotateX(90deg) rotateY(0deg);
+}
+
+.wall4{
+    transform:translateZ(100px) translateX(-100px) rotateX(0deg) rotateY(90deg);
+}
+
+.wall5{
+    transform:translateZ(100px) translateX(100px) rotateX(0deg) rotateY(90deg);
+}
