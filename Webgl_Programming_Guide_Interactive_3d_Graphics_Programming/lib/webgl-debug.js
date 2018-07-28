@@ -2,7 +2,7 @@
 //Use of this source code is governed by a BSD-style license that can be
 //found in the LICENSE file.
 
-// Various functions for helping debug ThreeJS apps.
+// Various functions for helping debug WebGL apps.
 
 WebGLDebugUtils = function() {
 
@@ -105,7 +105,7 @@ var glEnums = null;
 
 /**
  * Initializes this module. Safe to call more than once.
- * @param {!WebGLRenderingContext} ctx A ThreeJS context. If
+ * @param {!WebGLRenderingContext} ctx A WebGL context. If
  *    you have more than one context it doesn't matter which one
  *    you pass in, it is only used to pull out constants.
  */
@@ -130,9 +130,9 @@ function checkInit() {
 }
 
 /**
- * Returns true or false if value matches any ThreeJS enum
+ * Returns true or false if value matches any WebGL enum
  * @param {*} value Value to check if it might be an enum.
- * @return {boolean} True if value matches one of the ThreeJS defined enums
+ * @return {boolean} True if value matches one of the WebGL defined enums
  */
 function mightBeEnum(value) {
   checkInit();
@@ -140,7 +140,7 @@ function mightBeEnum(value) {
 }
 
 /**
- * Gets an string version of an ThreeJS enum.
+ * Gets an string version of an WebGL enum.
  *
  * Example:
  *   var str = WebGLDebugUtil.glEnumToString(ctx.getError());
@@ -152,13 +152,13 @@ function glEnumToString(value) {
   checkInit();
   var name = glEnums[value];
   return (name !== undefined) ? name :
-      ("*UNKNOWN ThreeJS ENUM (0x" + value.toString(16) + ")");
+      ("*UNKNOWN WebGL ENUM (0x" + value.toString(16) + ")");
 }
 
 /**
- * Returns the string version of a ThreeJS argument.
+ * Returns the string version of a WebGL argument.
  * Attempts to convert enum arguments to strings.
- * @param {string} functionName the name of the ThreeJS function.
+ * @param {string} functionName the name of the WebGL function.
  * @param {number} argumentIndx the index of the argument.
  * @param {*} value The value of the argument.
  * @return {string} The value as a string.
@@ -174,7 +174,7 @@ function glFunctionArgToString(functionName, argumentIndex, value) {
 }
 
 /**
- * Given a ThreeJS context returns a wrapped context that calls
+ * Given a WebGL context returns a wrapped context that calls
  * gl.getError after every command and calls a function if the
  * result is not gl.NO_ERROR.
  *
@@ -194,7 +194,7 @@ function makeDebugContext(ctx, opt_onErrorFunc) {
           argStr += ((ii == 0) ? '' : ', ') +
               glFunctionArgToString(functionName, ii, args[ii]);
         }
-        log("ThreeJS error "+ glEnumToString(err) + " in "+ functionName +
+        log("WebGL error "+ glEnumToString(err) + " in "+ functionName +
             "(" + argStr + ")");
       };
 
@@ -202,7 +202,7 @@ function makeDebugContext(ctx, opt_onErrorFunc) {
   // we can still return it to the client app.
   var glErrorShadow = { };
 
-  // Makes a function that calls a ThreeJS function and then calls getError.
+  // Makes a function that calls a WebGL function and then calls getError.
   function makeErrorWrapper(ctx, functionName) {
     return function() {
       var result = ctx[functionName].apply(ctx, arguments);
@@ -215,7 +215,7 @@ function makeDebugContext(ctx, opt_onErrorFunc) {
     };
   }
 
-  // Make a an object that has a copy of every property of the ThreeJS context
+  // Make a an object that has a copy of every property of the WebGL context
   // but wraps all functions.
   var wrapper = {};
   for (var propertyName in ctx) {
@@ -344,7 +344,7 @@ function makeLostContextSimulatingContext(ctx) {
     }
   }
 
-  // Makes a function that simulates ThreeJS when out of context.
+  // Makes a function that simulates WebGL when out of context.
   function makeLostContextWrapper(ctx, functionName) {
     var f = ctx[functionName];
     return function() {
@@ -577,21 +577,21 @@ function makeLostContextSimulatingContext(ctx) {
 return {
   /**
    * Initializes this module. Safe to call more than once.
-   * @param {!WebGLRenderingContext} ctx A ThreeJS context. If
+   * @param {!WebGLRenderingContext} ctx A WebGL context. If
    *    you have more than one context it doesn't matter which one
    *    you pass in, it is only used to pull out constants.
    */
   'init': init,
 
   /**
-   * Returns true or false if value matches any ThreeJS enum
+   * Returns true or false if value matches any WebGL enum
    * @param {*} value Value to check if it might be an enum.
-   * @return {boolean} True if value matches one of the ThreeJS defined enums
+   * @return {boolean} True if value matches one of the WebGL defined enums
    */
   'mightBeEnum': mightBeEnum,
 
   /**
-   * Gets an string version of an ThreeJS enum.
+   * Gets an string version of an WebGL enum.
    *
    * Example:
    *   WebGLDebugUtil.init(ctx);
@@ -603,7 +603,7 @@ return {
   'glEnumToString': glEnumToString,
 
   /**
-   * Converts the argument of a ThreeJS function to a string.
+   * Converts the argument of a WebGL function to a string.
    * Attempts to convert enum arguments to strings.
    *
    * Example:
@@ -612,7 +612,7 @@ return {
    *
    * would return 'TEXTURE_2D'
    *
-   * @param {string} functionName the name of the ThreeJS function.
+   * @param {string} functionName the name of the WebGL function.
    * @param {number} argumentIndx the index of the argument.
    * @param {*} value The value of the argument.
    * @return {string} The value as a string.
@@ -620,7 +620,7 @@ return {
   'glFunctionArgToString': glFunctionArgToString,
 
   /**
-   * Given a ThreeJS context returns a wrapped context that calls
+   * Given a WebGL context returns a wrapped context that calls
    * gl.getError after every command and calls a function if the
    * result is not NO_ERROR.
    *
@@ -643,7 +643,7 @@ return {
   'makeDebugContext': makeDebugContext,
 
   /**
-   * Given a ThreeJS context returns a wrapped context that adds 4
+   * Given a WebGL context returns a wrapped context that adds 4
    * functions.
    *
    * ctx.loseContext:
