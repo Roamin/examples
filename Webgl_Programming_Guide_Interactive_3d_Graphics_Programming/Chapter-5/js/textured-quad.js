@@ -141,17 +141,16 @@ function initTextures(gl, n) {
     }
 
     image.onload = function () {
-        console.log('load')
         loadTexture(gl, n, texture, u_Sampler, image)
     }
-    image.src = 'https://alpha.wallhaven.cc/wallpaper/664722'
+    image.src = '../resources/sky.jpg'
 
     return true
 }
 
 function loadTexture(gl, n, texture, u_Sampler, image) {
     // 对纹理图像进行 y 轴反转
-    gl.pixelStorei(Float32Array.UNPACK_FLIP_Y_WEBGL, 1)
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1)
     // 开启 0 号纹理单元
     gl.activeTexture(gl.TEXTURE0)
     // 向 target 绑定纹理对象
@@ -170,5 +169,4 @@ function loadTexture(gl, n, texture, u_Sampler, image) {
 
     // Draw the rectangle
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, n)
-    console.log('done', n)
 }
