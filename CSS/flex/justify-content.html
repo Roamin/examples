@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Justify Content</title>
+    <style>
+        body { margin: 0; }
+
+        h3 {
+            margin: 0 20px;
+        }
+
+        .flex {
+            display: flex;
+            margin: 10px 20px 30px;
+            border: 2px solid #cabbfd;
+        }
+
+        .flex-end { justify-content: flex-end;  }
+        .center { justify-content: center;  }
+        .space-between { justify-content: space-between;  }
+        .space-around { justify-content: space-around;  }
+        .space-around { justify-content: space-around;  }
+        .stretch { justify-content: stretch;  }
+        .space-evenly { justify-content: space-evenly;  }
+
+        .flex-item {
+            width: 80px;
+            height: 80px;
+            font-size: 24px;
+            line-height: 80px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, .25);
+            border: 2px solid #fff;
+            background-color: orangered;
+        }
+
+        .flex-item:nth-child(1) {
+            width: 240px;
+        }
+        .flex-item:nth-child(2) {
+            width: 160px;
+        }
+    </style>
+</head>
+<body>
+<h3>flex-start [default] 从行首起始位置开始排列</h3>
+<div class="flex flex-start">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>flex-end 从行尾位置开始排列</h3>
+<div class="flex flex-end">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>center 居中排列</h3>
+<div class="flex center">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>space-between 均匀排列每个元素 首个元素放置于起点，末尾元素放置于终点</h3>
+<div class="flex space-between">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>space-around 均匀排列每个元素 每个元素周围分配相同的空间</h3>
+<div class="flex space-around">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>space-around</h3>
+<div class="flex space-around">
+    <div class="flex-item">1</div>
+    <div class="flex-item" style="width: 300px">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>stretch Distribute items evenly Stretch 'auto'-sized items to fit the container</h3>
+<div class="flex stretch">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<h3>space-evenly 均匀排列每个元素 每个元素之间的间隔相等</h3>
+<div class="flex space-evenly">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+</body>
+</html>

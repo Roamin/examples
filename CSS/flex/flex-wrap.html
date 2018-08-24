@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Wrap</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .flex {
+            display: flex;
+            margin: 10px auto;
+            width: 200px;
+            border: 2px solid #000;
+            border-color: #cabbfd #f7c3bb #f7c3bb #cabbfd;
+        }
+
+        .flex-item {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #fff;
+            font-size: 24px;
+            line-height: 80px;
+            text-align: center;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, .25);
+            color: #fff;
+            background-color: orangered;
+        }
+
+        .wrap {
+            flex-wrap: wrap;
+        }
+        .nowrap {
+            flex-wrap: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex nowrap">
+    <div class="flex-item">N</div>
+    <div class="flex-item">O</div>
+    <div class="flex-item">WRAP</div>
+</div>
+<div class="flex wrap">
+    <div class="flex-item">W</div>
+    <div class="flex-item">R</div>
+    <div class="flex-item">AP</div>
+</div>
+</body>
+</html>

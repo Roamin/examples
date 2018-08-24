@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Direction</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .flex {
+            position: relative;
+            display: flex;
+            margin: 10px;
+            border: 2px solid #000;
+            border-color: #cabbfd #f7c3bb #f7c3bb #cabbfd;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+
+        .flex:before,
+        .flex:after {
+            content: "flex-direction: row";
+            position: absolute;
+            right: 0;
+            background: rgba(0,0,0,.85);
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+        .column:before {
+            content: "flex-direction: column";
+        }
+        .column-reverse:before {
+            content: "flex-direction: column-reverse";
+        }
+        .column:after,
+        .column-reverse:after {
+            content: "";
+        }
+
+        .flex:nth-child(1) {
+            flex-direction: row;
+            direction: ltr;
+        }
+        .flex:nth-child(1):before{
+             content: "flex-direction: row [default]";
+         }
+        .flex:nth-child(1):after {
+             content:"direction: ltr [default]";
+             bottom: 0;
+         }
+
+        .flex:nth-child(2) {
+            flex-direction: row;
+            direction: rtl;
+        }
+        .flex:nth-child(2):before{
+            content: "flex-direction: row";
+            right: auto;
+            left: 0;
+        }
+        .flex:nth-child(2):after {
+            content:"direction: trl";
+            bottom: 0;
+            right: auto;
+            left: 0;
+        }
+
+        .flex:nth-child(3) {
+            flex-direction: row-reverse;
+            direction: ltr;
+        }
+        .flex:nth-child(3):before{
+            content: "flex-direction: row-reverse";
+            right: auto;
+            left: 0;
+        }
+        .flex:nth-child(3):after {
+            content:"direction: ltr";
+            bottom: 0;
+            right: auto;
+            left: 0;
+        }
+
+        .flex:nth-child(4) {
+            flex-direction: row-reverse;
+            direction: rtl;
+        }
+        .flex:nth-child(4):before{
+            content: "flex-direction: row-reverse";
+        }
+        .flex:nth-child(4):after {
+            content:"direction: rtl";
+            bottom: 0;
+        }
+
+        .flex-item {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #fff;
+            font-size: 24px;
+            line-height: 80px;
+            text-align: center;
+            text-shadow: 2px 2px 1px rgba(0, 0, 0, .25);
+            color: #fff;
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+<div class="flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+<div class="flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<div class="flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+<div class="flex">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<div class="flex column">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+
+<div class="flex column-reverse">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+</div>
+</body>
+</html>
