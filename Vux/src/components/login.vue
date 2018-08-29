@@ -8,7 +8,7 @@
       </x-input>
     </group>
 
-    <x-button type="primary" class="login-button" @click.native="login">登录</x-button>
+    <x-button type="primary" :gradients="['#6f62d4', '#5fa8fb']" @click.native="login">登录</x-button>
 
     <flexbox class="more">
       <flexbox-item>
@@ -102,8 +102,6 @@ export default {
 </script>
 
 <style lang="less">
-  @import '~vux/src/styles/reset.less';
-
   html, body {
     height: 100%;
   }
@@ -138,10 +136,6 @@ export default {
     &:after {
       display: none;
     }
-  }
-
-  .login-button {
-    background-color: #146fdf !important;
   }
 
   .more {

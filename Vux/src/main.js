@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import router from './router'
 import FastClick from 'fastclick'
+import 'vux/src/styles/reset.less'
 
 import { Group, Cell, DatetimePlugin, BusPlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, AjaxPlugin } from 'vux'
 
