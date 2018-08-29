@@ -1,23 +1,28 @@
 <template>
   <div>
-    <x-header :left-options="{showBack: false}" class="header">Chat</x-header>
-    <sticky>
-      <tab default-color="#777" active-color="#ff4d64" class="header-tab">
-        <tab-item selected>正在热映</tab-item>
-        <tab-item>即将上映</tab-item>
-      </tab>
-    </sticky>
+    <x-header :left-options="{showBack: false}" class="header">Me</x-header>
 
-    <p v-for="i in 100">{{ i }}</p>
+    <group>
+      <cell title="Wallet" is-link>
+        <x-icon type="social-bitcoin" size="20" slot="icon"></x-icon>
+      </cell>
+    </group>
+
+    <group>
+      <cell title="Settings" is-link>
+        <x-icon type="settings" size="20" slot="icon"></x-icon>
+      </cell>
+    </group>
   </div>
 </template>
 
 <script>
-import {ViewBox, XHeader, Tab, TabItem, Tabbar, TabbarItem, Swiper, Sticky} from 'vux'
+import {Group, Cell, XHeader, Tab, TabItem, Tabbar, TabbarItem, Swiper, Sticky} from 'vux'
 
 export default {
   components: {
-    ViewBox,
+    Group,
+    Cell,
     XHeader,
     Tab,
     TabItem,
