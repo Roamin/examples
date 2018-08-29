@@ -9,8 +9,6 @@
     </sticky>
 
     <p v-for="i in 100">{{ i }}</p>
-
-    <swiper loop auto :list="bannerList"></swiper>
   </div>
 </template>
 

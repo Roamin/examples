@@ -3,15 +3,15 @@
     <router-view></router-view>
 
     <tabbar class="footer">
-      <tabbar-item selected>
+      <tabbar-item selected :link="{name: 'chats'}">
         <x-icon type="chatbubble" slot="icon"></x-icon>
         <span slot="label">Chats</span>
       </tabbar-item>
-      <tabbar-item>
+      <tabbar-item :link="{name: 'contacts'}">
         <x-icon type="ios-contact-outline" slot="icon"></x-icon>
         <span slot="label">Contacts</span>
       </tabbar-item>
-      <tabbar-item>
+      <tabbar-item :link="{name: 'me'}">
         <x-icon type="ios-person" slot="icon"></x-icon>
         <span slot="label">Me</span>
       </tabbar-item>
