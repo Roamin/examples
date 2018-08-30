@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import router from './router'
 import FastClick from 'fastclick'
+import '@/theme.less'
 import 'vux/src/styles/reset.less'
+import store from './store'
 
-import { Group, Cell, DatetimePlugin, BusPlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, AjaxPlugin } from 'vux'
+import { Group, Cell, Loading, DatetimePlugin, BusPlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, AjaxPlugin, TransferDomDirective } from 'vux'
 
 Vue.component('group', Group)
 Vue.component('cell', Cell)
+Vue.component('loading', Loading)
 
 // plugins
 Vue.use(DevicePlugin)
@@ -20,6 +23,8 @@ Vue.use(AjaxPlugin)
 Vue.use(BusPlugin)
 Vue.use(DatetimePlugin)
 
+Vue.use(TransferDomDirective)
+
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false
@@ -27,5 +32,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   router,
+  store,
   template: '<router-view></router-view>'
 }).$mount('#app-box')

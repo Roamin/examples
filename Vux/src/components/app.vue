@@ -1,5 +1,6 @@
 <template>
   <view-box>
+    <loading v-model="isLoading"></loading>
     <router-view></router-view>
 
     <tabbar class="footer">
@@ -21,6 +22,7 @@
 
 <script>
 import {ViewBox, XHeader, Tab, TabItem, Tabbar, TabbarItem, Swiper, Sticky} from 'vux'
+import {mapState, mapActions} from 'vuex'
 
 export default {
   components: {
@@ -50,6 +52,11 @@ export default {
         fallbackImg: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw50iwj20ff0aaaci.jpg'
       }]
     }
+  },
+  computed: {
+    ...mapState({
+      isLoading: state => state.isLoading
+    })
   },
   methods: {
 
