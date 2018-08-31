@@ -1,9 +1,9 @@
 <template>
-  <view-box>
+  <view-box :body-padding-top="'46px'" :body-padding-bottom="bodyPaddingBottom">
     <loading v-model="isLoading"></loading>
     <router-view></router-view>
 
-    <tabbar class="footer">
+    <tabbar class="tabbar" ref="tabbar" v-transfer-dom>
       <tabbar-item selected :link="{name: 'chats'}">
         <x-icon type="chatbubble" slot="icon"></x-icon>
         <span slot="label">Chats</span>
@@ -21,10 +21,13 @@
 </template>
 
 <script>
-import {ViewBox, XHeader, Tab, TabItem, Tabbar, TabbarItem, Swiper, Sticky} from 'vux'
+import {ViewBox, XHeader, Tab, TabItem, Tabbar, TabbarItem, Swiper, Sticky, TransferDom} from 'vux'
 import {mapState, mapActions} from 'vuex'
 
 export default {
+  directives: {
+    TransferDom
+  },
   components: {
     ViewBox,
     XHeader,
@@ -37,6 +40,7 @@ export default {
   },
   data () {
     return {
+      bodyPaddingBottom: 0,
       bannerList: [{
         url: 'javascript:',
         img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vvsr72j20p00gogo2.jpg',
@@ -59,7 +63,10 @@ export default {
     })
   },
   methods: {
-
+    ...mapActions({})
+  },
+  mounted () {
+    this.bodyPaddingBottom = this.$refs.tabbar.$el.clientHeight + 'px'
   }
 }
 </script>
@@ -67,19 +74,25 @@ export default {
 <style lang="less">
   html,
   body {
+    width: 100%;
     height: 100%;
+    overflow-x: hidden;
   }
 
   body {
     background-color: #efeff4;
   }
 
-  .header {
+  .x-header {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
     color: #fff;
     background-color: #1d1c21 !important;
   }
 
-  .footer {
+  .tabbar {
     background-color: #f8f8f8 !important;
   }
 </style>

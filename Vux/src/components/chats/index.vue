@@ -1,6 +1,6 @@
 <template>
     <section>
-      <x-header :left-options="{showBack: false}" class="header">Chat</x-header>
+      <x-header :left-options="{showBack: false}" class="x-header">Chat</x-header>
 
       <swipeout class="chat-list">
         <swipeout-item v-for="(chat, index) in chatList" :key="index">

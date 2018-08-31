@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import router from './router'
 import FastClick from 'fastclick'
-import '@/theme.less'
+// import '@/theme.less'
 import 'vux/src/styles/reset.less'
 import store from './store'
 

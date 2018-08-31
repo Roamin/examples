@@ -26,6 +26,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import('@/components/login')
+    },
+    {
+      path: '/full-page',
+      name: 'full-page',
+      component: () => import('@/components/full-page')
     }
   ]
 })
