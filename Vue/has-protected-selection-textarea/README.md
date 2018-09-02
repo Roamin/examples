@@ -36,4 +36,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## Demo
 
-- [preview](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/Vue/has-protected-selection-textarea/dist/index.html))
+- [preview](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/Vue/has-protected-selection-textarea/dist/index.html)
