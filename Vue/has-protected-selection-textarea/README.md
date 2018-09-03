@@ -24,7 +24,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 思路
 
 - KeyDown 触发的时候
-- 如果是删除操作（next）
+- 如果是删除操作（简单起见，不考虑文本输入）（next）
 - 获取当前选区（selectionStart 和 selectionEnd），如果当前 selection 在被保护文字区域 protectedSelection 范围内 （next）
 - e.preventDefault() 阻止当前删除操作
 - done
@@ -37,3 +37,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 ## Demo
 
 - [preview](http://htmlpreview.github.io/?https://github.com/RoamIn/examples/blob/master/Vue/has-protected-selection-textarea/dist/index.html)
+
+![demo.gif](./static/demo.gif)
